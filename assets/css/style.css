@@ -1,0 +1,142 @@
+/* ============================================================
+   SMKN 4 Bogor — Design Tokens
+   Konsep: "Jalur Karier Digital" — sekolah vokasi teknologi.
+   Palet gelap tinta (navy) + aksen cyan (digital/RPL-TKJ) + amber
+   (prestasi/akreditasi). Tipografi geometris untuk display,
+   humanis untuk body.
+   ============================================================ */
+
+:root {
+  --ink: #0B1220;
+  --ink-2: #131E36;
+  --indigo: #263A8C;
+  --cyan: #22D3C8;
+  --amber: #F5A623;
+  --paper: #F6F7FB;
+  --paper-2: #ECEEF6;
+  --line: #E2E5F0;
+  --text: #101828;
+  --text-muted: #5B6478;
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--paper);
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+}
+
+/* Signature: garis "jalur" bertitik yang menghubungkan jurusan/langkah,
+   merepresentasikan jalur karier siswa dari sekolah ke industri. */
+.track-line {
+  position: relative;
+}
+.track-line::before {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-image: linear-gradient(90deg, var(--cyan) 0 8px, transparent 8px 16px);
+  background-size: 16px 2px;
+  opacity: .5;
+}
+
+.bg-ink { background-color: var(--ink); }
+.bg-ink-2 { background-color: var(--ink-2); }
+.text-cyan { color: var(--cyan); }
+.bg-cyan { background-color: var(--cyan); }
+.text-amber { color: var(--amber); }
+.bg-amber { background-color: var(--amber); }
+.border-line { border-color: var(--line); }
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: var(--cyan);
+  color: var(--ink);
+  font-weight: 600;
+  padding: .75rem 1.5rem;
+  border-radius: 999px;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -8px rgba(34,211,200,.55); }
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  border: 1.5px solid rgba(255,255,255,.35);
+  color: #fff;
+  font-weight: 600;
+  padding: .75rem 1.5rem;
+  border-radius: 999px;
+  transition: border-color .15s ease, background .15s ease;
+}
+.btn-outline:hover { border-color: var(--cyan); background: rgba(34,211,200,.08); }
+
+/* Kartu jurusan */
+.card-jurusan {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.card-jurusan:hover {
+  transform: translateY(-6px);
+  border-color: var(--cyan);
+  box-shadow: 0 20px 40px -20px rgba(11,18,32,.25);
+}
+
+/* Circuit dot pattern untuk hero */
+.circuit-bg {
+  background-image: radial-gradient(rgba(34,211,200,.35) 1.5px, transparent 1.5px);
+  background-size: 26px 26px;
+}
+
+.badge-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+.badge-eyebrow::before {
+  content: "";
+  width: 8px; height: 8px;
+  border-radius: 999px;
+  background: var(--cyan);
+}
+
+nav a.active { color: var(--cyan) !important; }
+
+/* Animasi reveal saat scroll */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .btn-primary:hover, .card-jurusan:hover { transform: none; }
+}
+
+.focus-ring:focus-visible {
+  outline: 3px solid var(--cyan);
+  outline-offset: 2px;
+}
+
+table.admin-table th { background: var(--ink); color: #fff; }
+table.admin-table tr:nth-child(even) { background: var(--paper-2); }
