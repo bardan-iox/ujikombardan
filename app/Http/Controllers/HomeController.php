@@ -1,19 +1,15 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Models\Article;
-use App\Models\Achievement;
-use App\Models\Program;
+use App\Models\Product;
+
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $programs = Program::latest()->take(4)->get();
-        $articles = Article::latest('published_at')->take(3)->get();
-        $achievements = Achievement::latest()->take(3)->get();
-
-        return view('home', compact('programs', 'articles', 'achievements'));
+        $articles = Article::latest('published_at')->take(2)->get();
+        $products = Product::latest()->take(1)->get();
+        return view('home', compact('articles', 'products'));
     }
 }

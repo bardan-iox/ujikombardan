@@ -19,9 +19,9 @@
         <div class="col-md-5">
             <div class="card border-0 shadow-lg p-4">
                 <div class="text-center mb-3">
-                    <i class="bi bi-mortarboard-fill fs-1" style="color:#0b2545;"></i>
-                    <h4 class="fw-bold mt-2">Login Admin</h4>
-                    <p class="text-muted small">Sekolah Kita &mdash; Sistem Manajemen</p>
+                    <img src="{{ asset('images/logo.png') }}" alt="Logo SMKN 4 Bogor" style="height:64px; width:auto;">
+                    <h4 class="fw-bold mt-2">SMK Negeri 4 Bogor</h4>
+                    <p class="text-muted small">SMK Negeri 4 Bogor &mdash; Sistem Manajemen</p>
                 </div>
 
                 @if(session('error'))

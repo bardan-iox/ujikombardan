@@ -28,7 +28,7 @@ class ArticleController extends Controller
             'category' => 'nullable|string|max:100',
             'excerpt' => 'nullable|string',
             'content' => 'required|string',
-            'cover_image' => 'nullable|image|max:2048',
+            'cover_image' => 'nullable|image|max:10240',
         ]);
 
         $data = $request->all();
@@ -57,7 +57,7 @@ class ArticleController extends Controller
             'category' => 'nullable|string|max:100',
             'excerpt' => 'nullable|string',
             'content' => 'required|string',
-            'cover_image' => 'nullable|image|max:2048',
+            'cover_image' => 'nullable|image|max:10240',
         ]);
 
         $data = $request->all();

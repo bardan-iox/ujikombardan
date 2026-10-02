@@ -1,12 +1,12 @@
 <?php
 
-use App\Http\Controllers\Admin\AchievementController as AdminAchievementController;
+use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\Admin\ArticleController as AdminArticleController;
 use App\Http\Controllers\Admin\ContactMessageController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\GalleryController as AdminGalleryController;
 use App\Http\Controllers\Admin\ProgramController as AdminProgramController;
-use App\Http\Controllers\AchievementController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\Auth\AdminAuthController;
 use App\Http\Controllers\ContactController;
@@ -31,7 +31,7 @@ Route::get('/artikel', [ArticleController::class, 'index'])->name('artikel.index
 Route::get('/artikel/{article:slug}', [ArticleController::class, 'show'])->name('artikel.show');
 
 Route::get('/galeri', [GalleryController::class, 'index'])->name('galeri.index');
-Route::get('/prestasi', [AchievementController::class, 'index'])->name('prestasi.index');
+Route::get('/produk', [ProductController::class, 'index'])->name('produk.index');
 
 Route::get('/kontak', [ContactController::class, 'index'])->name('kontak.index');
 Route::post('/kontak', [ContactController::class, 'store'])->name('kontak.store');
@@ -60,7 +60,7 @@ Route::prefix('admin')->name('admin.')->middleware('admin')->group(function () {
 
     Route::resource('gallery', AdminGalleryController::class)->only(['index', 'create', 'store', 'destroy']);
 
-    Route::resource('achievements', AdminAchievementController::class)->except('show');
+    Route::resource('products', AdminProductController::class)->except('show');
 
     Route::get('/messages', [ContactMessageController::class, 'index'])->name('messages.index');
     Route::get('/messages/{contactMessage}', [ContactMessageController::class, 'show'])->name('messages.show');

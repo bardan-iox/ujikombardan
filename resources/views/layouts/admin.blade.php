@@ -23,13 +23,15 @@
 <body>
 <div class="d-flex">
     <div class="sidebar p-3" style="width:250px; position:sticky; top:0; height:100vh;">
-        <div class="brand"><i class="bi bi-mortarboard-fill me-1"></i> Admin Sekolah</div>
+        <div class="brand d-flex align-items-center">
+            <img src="{{ asset('images/logo.png') }}" alt="Logo SMKN 4 Bogor" style="height:40px; width:auto;" class="me-2">
+            Admin SMKN 4
+        </div>
         <nav class="d-flex flex-column gap-1 mt-3">
             <a href="{{ route('admin.dashboard') }}" class="{{ request()->routeIs('admin.dashboard') ? 'active' : '' }}"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a>
-            <a href="{{ route('admin.programs.index') }}" class="{{ request()->routeIs('admin.programs.*') ? 'active' : '' }}"><i class="bi bi-mortarboard me-2"></i>Program Keahlian</a>
             <a href="{{ route('admin.articles.index') }}" class="{{ request()->routeIs('admin.articles.*') ? 'active' : '' }}"><i class="bi bi-newspaper me-2"></i>Artikel / Berita</a>
             <a href="{{ route('admin.gallery.index') }}" class="{{ request()->routeIs('admin.gallery.*') ? 'active' : '' }}"><i class="bi bi-images me-2"></i>Galeri</a>
-            <a href="{{ route('admin.achievements.index') }}" class="{{ request()->routeIs('admin.achievements.*') ? 'active' : '' }}"><i class="bi bi-trophy me-2"></i>Prestasi</a>
+            <a href="{{ route('admin.products.index') }}" class="{{ request()->routeIs('admin.products.*') ? 'active' : '' }}"><i class="bi bi-box-seam me-2"></i>Produk Siswa</a>
             <a href="{{ route('admin.messages.index') }}" class="{{ request()->routeIs('admin.messages.*') ? 'active' : '' }}"><i class="bi bi-envelope me-2"></i>Pesan Masuk</a>
             <hr class="border-secondary">
             <a href="{{ route('home') }}" target="_blank"><i class="bi bi-globe me-2"></i>Lihat Situs</a>

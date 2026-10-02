@@ -27,13 +27,11 @@
         <div class="row align-items-center">
             <div class="col-lg-8">
                 <span class="badge badge-yellow px-3 py-2 mb-3">Membangun Masa Depan Gemilang</span>
-                <h1 class="display-5 fw-bold mb-3">Unggul, Berkarakter, dan<br>Berdaya Saing Global</h1>
+                <h1 class="display-5 fw-bold mb-3">Unggul, Berkarakter, dan<br>Berdaya Saing Di Era Digital</h1>
                 <p class="fs-5 mb-4" style="max-width:560px; opacity:.9;">
-                    Mencetak generasi berprestasi dan siap kerja di era digital melalui pendidikan vokasi
+                    Mencetak generasi berprestasi dan siap kerja di era digital melalui pendidikan 
                     yang inovatif dan terintegrasi dengan industri.
                 </p>
-                {{-- <a href="{{ route('galeri.index') }}" class="btn btn-yellow btn-lg px-4 me-2">Galeri <i class="bi bi-arrow-right"></i></a>
-                <a href="{{ route('profil') }}" class="btn btn-outline-light btn-lg px-4">Pelajari Lebih Lanjut</a> --}}
             </div>
         </div>
     </div>
@@ -60,12 +58,11 @@
             <div class="col-md-6 col-lg-3">
                 <div class="card h-100 border-0 shadow-sm card-hover">
                     <div class="card-body">
-                       <div class="mb-3"><img src="{{ asset('images/tkjt.jpeg') }}" alt="Logo TJKT" style="width:56px; height:56px; object-fit:cover; border-radius:12px;"></div>
+                         <div class="mb-3"><img src="{{ asset('images/tkjt.jpeg') }}" alt="Logo TJKT" style="width:56px; height:56px; object-fit:cover; border-radius:12px;"></div>
                         <h5 class="fw-bold">TJKT</h5>
                         <p class="text-muted small">Teknik Jaringan Komputer dan Telekomunikasi &mdash; instalasi jaringan hingga fiber optik.</p>
                     </div>
                 </div>
-
             </div>
             <div class="col-md-6 col-lg-3">
                 <div class="card h-100 border-0 shadow-sm card-hover">
@@ -122,19 +119,25 @@
                     @endforelse
                 </div>
             </div>
+            
             <div class="col-lg-4 mt-4 mt-lg-0">
                 <div class="card border-0 shadow-sm h-100">
                     <div class="card-body">
-                        <h5 class="fw-bold mb-3"><i class="bi bi-trophy text-warning me-1"></i> Prestasi Siswa</h5>
-                        @forelse($achievements as $item)
-                            <div class="mb-3 pb-3 border-bottom">
-                                <div class="fw-semibold small">{{ $item->title }}</div>
-                                <div class="text-muted small">{{ $item->level }} &middot; {{ $item->year }}</div>
+                        <h5 class="fw-bold mb-3"><i class="bi bi-box-seam text-warning me-1"></i> Produk Siswa</h5>
+                        @forelse($products as $item)
+                            <div class="mb-3 pb-3 border-bottom d-flex gap-2 align-items-center">
+                                @if($item->image)
+                                    <img src="{{ asset('storage/' . $item->image) }}" style="width:44px; height:44px; object-fit:cover; border-radius:8px;">
+                                @endif
+                                <div>
+                                    <div class="fw-semibold small">{{ $item->title }}</div>
+                                    <div class="text-muted small">{{ $item->student_name }} @if($item->class_name) &middot; {{ $item->class_name }} @endif</div>
+                                </div>
                             </div>
                         @empty
-                            <p class="text-muted small">Belum ada data prestasi.</p>
+                            <p class="text-muted small">Belum ada produk siswa.</p>
                         @endforelse
-                        <a href="{{ route('prestasi.index') }}" class="btn btn-navy btn-sm w-100 mt-2">Lihat Semua Prestasi</a>
+                        <a href="{{ route('produk.index') }}" class="btn btn-navy btn-sm w-100 mt-2">Lihat Semua Produk</a>
                     </div>
                 </div>
             </div>
@@ -146,7 +149,7 @@
     <div class="container">
         <p class="text-center text-muted small fw-semibold mb-4">BEKERJASAMA DENGAN INDUSTRI TERKEMUKA</p>
         <div class="d-flex flex-wrap justify-content-center gap-5">
-            @foreach(['Bonet'] as $partner)
+            @foreach(['Bonet - Honda - Komatsu'] as $partner)
                 <span class="partner-logo fw-bold fs-5 text-secondary">{{ $partner }}</span>
             @endforeach
         </div>
@@ -157,7 +160,7 @@
     <div class="container">
         <div class="cta-banner text-white text-center p-5">
             <h3 class="fw-bold mb-2">Siap Bergabung Bersama Kami?</h3>
-            <p class="mb-4" style="opacity:.85;">Mulai langkah pertamamu menuju karir yang cerah dan berdaya saing global.</p>
+            <p class="mb-4" style="opacity:.85;">Mulai langkah pertamamu menuju karir yang cerah.</p>
             <a href="{{ route('kontak.index') }}" class="btn btn-yellow btn-lg px-5">Hubungi Kami</a>
         </div>
     </div>

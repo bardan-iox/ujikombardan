@@ -55,10 +55,9 @@
             <ul class="navbar-nav gap-lg-3 align-items-lg-center">
                 <li class="nav-item"><a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">Home</a></li>
                 <li class="nav-item"><a class="nav-link {{ request()->routeIs('profil') ? 'active' : '' }}" href="{{ route('profil') }}">Profil</a></li>
-                <li class="nav-item"><a class="nav-link {{ request()->routeIs('program.*') ? 'active' : '' }}" href="{{ route('program.index') }}">Program</a></li>
                 <li class="nav-item"><a class="nav-link {{ request()->routeIs('artikel.*') ? 'active' : '' }}" href="{{ route('artikel.index') }}">Berita</a></li>
                 <li class="nav-item"><a class="nav-link {{ request()->routeIs('galeri.*') ? 'active' : '' }}" href="{{ route('galeri.index') }}">Galeri</a></li>
-                <li class="nav-item"><a class="nav-link {{ request()->routeIs('prestasi.*') ? 'active' : '' }}" href="{{ route('prestasi.index') }}">Prestasi</a></li>
+                <li class="nav-item"><a class="nav-link {{ request()->routeIs('produk.*') ? 'active' : '' }}" href="{{ route('produk.index') }}">Produk</a></li>
                 <li class="nav-item"><a class="nav-link {{ request()->routeIs('kontak.*') ? 'active' : '' }}" href="{{ route('kontak.index') }}">Kontak</a></li>
             </ul>
         </div>
@@ -84,7 +83,7 @@
             <div class="col-md-4">
                 <img src="{{ asset('images/logo.png') }}" alt="Logo SMKN 4 Bogor" style="height:48px; width:auto;" class="mb-2">
                 {{-- <h5 class="text-white">SMK Negeri 4 Bogor</h5> --}}
-                <p class="small mt-2">Sekolah kejuruan unggulan yang berdedikasi menciptakan lulusan siap kerja dengan kompetensi global.</p>
+                <p class="small mt-2">Sekolah kejuruan unggulan yang berdedikasi menciptakan lulusan siap kerja.</p>
             </div>
             <div class="col-md-4">
                 <h6 class="text-white">Tautan</h6>
